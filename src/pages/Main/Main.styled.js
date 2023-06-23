@@ -5,6 +5,9 @@ export const MainWrap = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
 `;
 
 export const TweeterList = styled.ul`
