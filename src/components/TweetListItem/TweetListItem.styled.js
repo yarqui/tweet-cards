@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import ellipse from "../../assets/ellipse.png";
-// import ellipse from "../../assets/ellipse-x2.png";
 
 export const Item = styled.li`
   display: flex;
