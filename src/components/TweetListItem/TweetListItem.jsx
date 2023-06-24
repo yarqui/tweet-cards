@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Avatar, Item } from "./TweetListItem.styled";
 import PAGE_NAMES from "../../router/paths";
 
@@ -20,6 +21,10 @@ const TweetListItem = ({ user }) => {
       <p>{userName}</p>
     </Item>
   );
+};
+
+TweetListItem.propTypes = {
+  user: PropTypes.object.isRequired,
 };
 
 export default TweetListItem;

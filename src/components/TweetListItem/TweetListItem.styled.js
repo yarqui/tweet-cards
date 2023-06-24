@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ellipse from "../../assets/ellipse.png";
+// import ellipse from "../../assets/ellipse-x2.png";
 
 export const Item = styled.li`
   display: flex;
@@ -10,7 +12,6 @@ export const Item = styled.li`
 
   color: #ebd8ff;
   font-size: 20px;
-  font-family: Montserrat;
   font-weight: 500;
   text-transform: uppercase;
 
@@ -22,8 +23,34 @@ export const Item = styled.li`
     rgba(0, 0, 0, 0.23);
 `;
 
+export const AvatarWrap = styled.div`
+  position: relative;
+
+  width: 62px;
+  height: 62px;
+  top: 50%;
+  margin-top: 53%;
+`;
+
+export const Ellipse = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 79px;
+  height: 79px;
+  background-image: url(${ellipse});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 3;
+`;
+
 export const Avatar = styled.img`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
-  border: 8px solid #f6effe;
-  box-shadow: 0px 2px 3px 0px #cca9f1, 0px -2px 3px 0px #cca9f1;
+  z-index: 2;
 `;
