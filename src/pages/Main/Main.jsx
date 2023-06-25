@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { MainWrap, TweeterList } from "./Main.styled";
 import TweetListItem from "../../components/TweetListItem";
-import { useEffect, useState } from "react";
-import { fetchUsers } from "../../api/users/userApi";
 import Button from "../../components/Button/Button";
+import { fetchUsers } from "../../api/users/userApi";
 
 const initialUsers = [];
 const initialPageNumber = 1;
@@ -23,7 +23,7 @@ const Main = () => {
     };
 
     fetchUsersData();
-  }, []);
+  }, [currentPageNumber]);
 
   useEffect(() => {
     const fetchUsersData = async () => {

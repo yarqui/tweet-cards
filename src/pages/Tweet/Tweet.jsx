@@ -1,18 +1,18 @@
 import { Link, useParams } from "react-router-dom";
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { fetchUserById, updateUserFollowers } from "../../api/users/userApi";
+import Button from "../../components/Button/Button";
+import UserStats from "../../components/UserStats";
+import { saveToLocalStorage } from "../../utils/localStorageOperations";
+import PAGE_NAMES from "../../router/paths";
+import LS_KEY_NAMES from "../../utils/LSKeyNames";
 import { CardWrap } from "./Tweet.styled";
 import {
   Avatar,
   AvatarWrap,
   Ellipse,
 } from "../../components/TweetListItem/TweetListItem.styled";
-import PAGE_NAMES from "../../router/paths";
-import Button from "../../components/Button/Button";
-import UserStats from "../../components/UserStats";
-import { saveToLocalStorage } from "../../utils/localStorageOperations";
-import LS_KEY_NAMES from "../../utils/LSKeyNames";
 
 const initialUser = [];
 
@@ -22,18 +22,18 @@ const Tweet = ({ subscriptions, setSubscriptions }) => {
   const [isFollowed, setIsFollowed] = useState(false);
   let { avatar, tweets, followers } = user;
 
-  const checkIfFollowing = (userId) => {
-    return subscriptions.includes(userId);
-  };
-
   useEffect(() => {
     (async () => {
+      const checkIfFollowing = (userId) => {
+        return subscriptions.includes(userId);
+      };
+
       const userData = await fetchUserById(id);
 
       setIsFollowed(checkIfFollowing(id));
       setUser(userData);
     })();
-  }, []);
+  }, [subscriptions, id]);
 
   const checkSubscription = async (id) => {
     const index = subscriptions.indexOf(id);

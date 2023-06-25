@@ -4,7 +4,7 @@ import PAGE_NAMES from "../../router/paths";
 const NotFound = () => {
   return (
     <>
-      <h2>There's no such page</h2>
+      <h2>There&apos;s no such page</h2>
       <Link to={PAGE_NAMES.homepage}>Back to Homepage</Link>
     </>
   );

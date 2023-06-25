@@ -1,5 +1,5 @@
-import { UserWrap } from "./UserStats.styled";
 import PropTypes from "prop-types";
+import { UserWrap } from "./UserStats.styled";
 
 const UserStats = ({ tweets = 0, followers = 0 }) => {
   return (
