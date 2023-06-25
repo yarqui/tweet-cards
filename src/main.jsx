@@ -7,7 +7,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="tweet-cards">
+    <BrowserRouter>
       <ErrorBoundary fallbackRender={({ error }) => <div>{error.message}</div>}>
         <App />
       </ErrorBoundary>
